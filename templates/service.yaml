@@ -35,6 +35,12 @@ spec:
   {{- if .Values.service.trafficDistribution }}
   trafficDistribution: {{ .Values.service.trafficDistribution | quote }}
   {{- end }}
+  {{- if .Values.service.externalTrafficPolicy }}
+  externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy | quote }}
+  {{- end }}
+  {{- if .Values.service.internalTrafficPolicy }}
+  internalTrafficPolicy: {{ .Values.service.internalTrafficPolicy | quote }}
+  {{- end }}
   ports:
     - name: pgdog
       protocol: TCP

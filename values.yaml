@@ -317,6 +317,16 @@ service:
   # (PreferClose, PreferSameZone, PreferSameNode)
   # see https://kubernetes.io/docs/reference/networking/virtual-ips/#traffic-distribution for more details.
   trafficDistribution: ""
+  # externalTrafficPolicy controls how NodePort and LoadBalancer services
+  # route external traffic (Cluster or Local). Local restricts load-balancer
+  # backends to nodes running pgdog pods (avoiding an extra hop through
+  # non-backend nodes) and preserves client source IPs.
+  # see https://kubernetes.io/docs/reference/networking/virtual-ips/#external-traffic-policy for more details.
+  externalTrafficPolicy: ""
+  # internalTrafficPolicy controls how in-cluster traffic to the service is
+  # routed (Cluster or Local).
+  # see https://kubernetes.io/docs/reference/networking/virtual-ips/#internal-traffic-policy for more details.
+  internalTrafficPolicy: ""
   # aws configures AWS Load Balancer Controller annotations
   # When enabled, service type is automatically set to LoadBalancer
   aws:
