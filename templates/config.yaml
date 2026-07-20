@@ -10,7 +10,7 @@ data:
         port                      =   {{ include "pgdog.intval" .Values.port }}
         {{- end }}
         {{- if hasKey .Values "workers" }}
-        workers                   =   {{ include "pgdog.intval" .Values.workers }}
+        workers                   =   {{ include "pgdog.workers" . }}
         {{- end }}
         {{- if hasKey .Values "defaultPoolSize" }}
         default_pool_size         =   {{ include "pgdog.intval" .Values.defaultPoolSize }}
